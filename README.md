@@ -1,3 +1,3 @@
-# Python_sorting_algs
+# My_code
 
-These are my sorting algorithms I made for school.
+This is where my code lives.
