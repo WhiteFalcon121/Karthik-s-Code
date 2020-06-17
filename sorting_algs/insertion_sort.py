@@ -24,5 +24,14 @@ for x in list1:
         list1.insert(list1.index(x), currentnum)
         "print(list1)"
     num1 = 0
+    
+  newlist = []
+  num = 0
+  for i in list1:
+    if list1.count(i) > 1 and i in newlist:
+      list1.pop(num)
+      list1.insert(list1.index(i)+1, i)
+    newlist.append(i)
+    num += 1
 
 print('Result:', list1)
