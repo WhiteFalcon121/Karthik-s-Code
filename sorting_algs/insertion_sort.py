@@ -23,5 +23,6 @@ for x in list1:
         list1.remove(currentnum)
         list1.insert(list1.index(x), currentnum)
         "print(list1)"
+    num1 = 0
 
 print('Result:', list1)
