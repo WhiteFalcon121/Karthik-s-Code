@@ -1,4 +1,5 @@
 def find_lowest(list_name):
+    """This function finds the lowest value in a given list"""
     compars = 1
     lowest = list_name[0]
     for x in list_name:
