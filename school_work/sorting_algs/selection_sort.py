@@ -11,7 +11,7 @@ def find_lowest(list_name):
         compars += 1
     return lowest
 
-def selection_sort(list1):
+def selection_sort(list1, reverse):
     i = 0
     list2 = list(list1)
     for i in range(len(list1)):
@@ -30,7 +30,10 @@ def selection_sort(list1):
                 list1.insert(list1.index(i)+1, i)
             newlist.append(i)
             num += 1
+    if reverse == True:
+        list1=list1[::-1]
     return list1
 
+reverse = False
 list1 = [5, 4, 3, 2, 1, 2, 5]
-print(selection_sort(list1))
+print(selection_sort(list1, True))
