@@ -11,6 +11,7 @@ space_counter = 20
 color_counter = 0
 canvas_x = len(list1)*20 + 40
 canvas_y = max(list1)*10 + 20
+reverse = True
 
 # drawlist function
 def drawlist(listname, space_counter, color_counter):
@@ -51,8 +52,6 @@ def bubble_sort(list1):
         newlist.append(i)
         num += 1
 
-    return list1
-
 #set up
 
 gameDisplay = pygame.display.set_mode((canvas_x, canvas_y))
@@ -71,5 +70,9 @@ while running == True:
 
         drawlist(list1, space_counter, color_counter)
 
-        pygame.time.wait(100)
-        running = False
+    if reverse == True:
+        list1 = list1[::-1]
+        drawlist(list1, space_counter, color_counter)
+
+    pygame.time.wait(200)
+    running = False
