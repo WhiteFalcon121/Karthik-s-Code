@@ -1,4 +1,4 @@
-def bubble_sort(list1):
+def bubble_sort(list1, reverse):
     for i in range(0, len(list1)-1):
       for x in list1:
         next_index = list1.index(x) + 1
@@ -20,7 +20,10 @@ def bubble_sort(list1):
         newlist.append(i)
         num += 1
 
+    if reverse == True:
+        list1=list1[::-1]
     return list1
 
+reverse = False
 list1 = [5, 2, 3, 1, 4, 14, 0.3, 2, 4, 2, 4]
-print(bubble_sort(list1))
+print(bubble_sort(list1, True))
