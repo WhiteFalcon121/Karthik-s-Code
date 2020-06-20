@@ -1,12 +1,12 @@
-def merge_sort(list_name):
+def merge_sort(list_name, reverse):
     if len(list_name) > 1:
         mid = len(list_name)//2
         left = list_name[:mid]
         right = list_name[mid:]
         print(left, right)
         # recursive
-        merge_sort(left)
-        merge_sort(right)
+        merge_sort(left, reverse)
+        merge_sort(right, reverse)
 
         # to go through halves
         i = 0
@@ -32,7 +32,11 @@ def merge_sort(list_name):
             list_name[k] = right[j]
             j+=1
             k+=1
+
+    if reverse == True:
+        list_name=list_name[::-1]
     return list_name
 
-list1 = [2, 3, 7, 1, 5, 2, ]
-print(merge_sort(list1))
+reverse = False
+list1 = [2, 3, 7, 1, 5, 2, 7]
+print(merge_sort(list1, True))
