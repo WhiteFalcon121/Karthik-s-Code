@@ -29,6 +29,30 @@ def drawlist(listname, space_counter, color_counter):
     pygame.time.wait(100)
     gameDisplay.fill((0, 0, 1))
 
+def bubble_sort(list1):
+    for i in range(0, len(list1)-1):
+        for x in list1:
+            next_index = list1.index(x) + 1
+            if next_index == len(list1):
+                break
+                'print(next_index)'
+            next_one = list1[next_index]
+            if x > next_one:
+                list1[next_index] = x
+                list1[list1.index(x)] = next_one
+                print(list1)
+                drawlist(list1, space_counter, color_counter)
+            newlist = []
+            num = 0
+    for i in list1:
+        if list1.count(i) > 1 and i in newlist:
+            list1.pop(num)
+            list1.insert(list1.index(i)+1, i)
+        newlist.append(i)
+        num += 1
+
+    return list1
+
 #set up
 
 gameDisplay = pygame.display.set_mode((canvas_x, canvas_y))
@@ -36,24 +60,16 @@ gameDisplay.fill((0, 0, 1))
 
 drawlist(list1, space_counter, color_counter)
 
-while running == 1:
+while running == True:
     for i in range(0, len(list1)-1):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-    for i in range(int(len(list1))**2):
-            for x in list1:
-                next_index = list1.index(x) + 1
-                if next_index == len(list1):
-                  break
-                'print(next_index)'
-                next_one = list1[next_index]
-                if x > next_one:
-                  list1[next_index] = x
-                  list1[list1.index(x)] = next_one
 
-                drawlist(list1, space_counter, color_counter)
+        bubble_sort(list1)
 
-    pygame.time.wait(100)
-    running = False
+        drawlist(list1, space_counter, color_counter)
+
+        pygame.time.wait(100)
+        running = False
