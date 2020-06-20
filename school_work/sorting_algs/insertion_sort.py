@@ -1,4 +1,4 @@
-def insertion_sort(list1):
+def insertion_sort(list1, reverse):
     num1 = 0
     for x in list1:
         numsbefore = list1.index(x)
@@ -26,7 +26,10 @@ def insertion_sort(list1):
             newlist.append(i)
             num += 1
 
+    if reverse == True:
+        list1=list1[::-1]
     return list1
 
+reverse = False
 list2 = [8, 5, 1, 6, 2, 7, 2, 4, 3]
-print(insertion_sort(list2))
+print(insertion_sort(list2, True))
