@@ -34,5 +34,5 @@ def merge_sort(list_name):
             k+=1
     return list_name
 
-list1 = [2, 3, 7, 1, 5]
+list1 = [2, 3, 7, 1, 5, 2, ]
 print(merge_sort(list1))
