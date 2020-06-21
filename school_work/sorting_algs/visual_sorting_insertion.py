@@ -11,7 +11,7 @@ space_counter = 20
 color_counter = 0
 canvas_x = len(list1)*20 + 40
 canvas_y = max(list1)*10 + 20
-reverse = True
+reverse = False
 
 # drawlist function
 def drawlist(listname, space_counter, color_counter):
@@ -48,7 +48,6 @@ def insertion_sort(list1):
                     if currentnum < x and list1.index(currentnum) > list1.index(x): #swap if wrong order
                         list1.remove(currentnum)
                         list1.insert(list1.index(x), currentnum)
-                    num1 = 0
                 else:
                     if currentnum > x: #
                         num1 = num1 + 1
@@ -60,7 +59,7 @@ def insertion_sort(list1):
                     if currentnum > x and list1.index(currentnum) > list1.index(x): #swap if wrong order
                         list1.remove(currentnum)
                         list1.insert(list1.index(x), currentnum)
-                    num1 = 0
+                num1 = 0
 
         newlist = []
         num = 0
