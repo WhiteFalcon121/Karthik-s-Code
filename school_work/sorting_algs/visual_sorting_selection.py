@@ -14,6 +14,7 @@ canvas_y = max(list1)*10 + 20
 compars = 1
 i = 0
 list2 = list(list1)
+reverse = True
 
 def find_lowest(list_name):
     """This function finds the lowest value in a given list"""
@@ -22,10 +23,10 @@ def find_lowest(list_name):
     for x in list_name:
         if compars == len(list_name):
             break
-        next_index = list_name.index(x) + 1
-        if list_name[next_index] < x and list_name[next_index] < lowest:
-            lowest = list_name[next_index]
-        compars += 1
+        if x < lowest and reverse == False:
+            lowest = x
+        if x > lowest and reverse == True:
+            lowest = x
     return lowest
 
 def selection_sort(list1):
@@ -38,7 +39,6 @@ def selection_sort(list1):
         if lowest_index!= i:
             list1[i], list1[lowest_index] = list1[lowest_index], list1[i]
         i +=1
-
         newlist = []
         num = 0
         for i in list1:
