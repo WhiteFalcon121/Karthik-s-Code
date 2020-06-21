@@ -8,5 +8,5 @@ def find_highest(list_name):
             highest = x
     return highest
 
-list1 = [2, 2, 10, 4, 51, 1, 3, 5, 25]
+list1 = [2, 2, 10, 4, 51, 1, 10, 3, 5, 25, 25]
 print(find_highest(list1))
