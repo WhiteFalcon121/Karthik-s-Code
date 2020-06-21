@@ -11,6 +11,7 @@ space_counter = 20
 color_counter = 0
 canvas_x = len(list1)*20 + 40
 canvas_y = max(list1)*10 + 20
+reverse = True
 
 # drawlist function
 def drawlist(listname, space_counter, color_counter):
@@ -36,17 +37,30 @@ def insertion_sort(list1):
         currentnum = x
         if numsbefore != 0:
             for x in list1[:numsbefore]:
-                if currentnum < x:
-                    num1 = num1 + 1
-                if num1 == len(list1[:numsbefore]):
-                    list1.remove(currentnum)
-                    list1.insert(0, currentnum)
+                if reverse == False:
+                    if currentnum < x: #
+                        num1 = num1 + 1
+                    if num1 == len(list1[:numsbefore]): #put at beginning if all numsbefore are smaller
+                        list1.remove(currentnum)
+                        list1.insert(0, currentnum)
+                        num1 = 0
+                        continue
+                    if currentnum < x and list1.index(currentnum) > list1.index(x): #swap if wrong order
+                        list1.remove(currentnum)
+                        list1.insert(list1.index(x), currentnum)
                     num1 = 0
-                    continue
-                if currentnum < x and list1.index(currentnum) > list1.index(x):
-                    list1.remove(currentnum)
-                    list1.insert(list1.index(x), currentnum)
-                num1 = 0
+                else:
+                    if currentnum > x: #
+                        num1 = num1 + 1
+                    if num1 == len(list1[:numsbefore]): #put at beginning if all numsbefore are smaller
+                        list1.remove(currentnum)
+                        list1.insert(0, currentnum)
+                        num1 = 0
+                        continue
+                    if currentnum > x and list1.index(currentnum) > list1.index(x): #swap if wrong order
+                        list1.remove(currentnum)
+                        list1.insert(list1.index(x), currentnum)
+                    num1 = 0
 
         newlist = []
         num = 0
