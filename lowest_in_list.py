@@ -4,8 +4,8 @@ def find_lowest(list_name):
     for x in list_name:
         if compars == len(list_name):
             break
-        next_index = list_name.index(x) + 1
-        if list_name[next_index] < x and list_name[next_index] < lowest:
-            lowest = list_name[next_index]
-        compars += 1
+        if x < lowest:
+            lowest = x
     return lowest
+list1  = [9, 5, 1, 6, 1, 23]
+print(find_lowest(list1))
