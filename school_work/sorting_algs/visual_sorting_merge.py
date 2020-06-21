@@ -3,14 +3,14 @@ pygame.init()
 
 #variables
 running = True
-list1 = [1, 5, 2, 4, 3, 12, 56, 43, 18, 5, 1, 2, 4]
+list1 = [2, 5, 1, 3, 4, 2, 9, 1]
 num1 = 0
 y = 10
 space_counter = 20
 color_counter = 0
 canvas_x = len(list1)*20 + 80
 canvas_y = max(list1)*10 + 30
-
+reverse = False
 #drawlist function
 def drawlist(listname, space_counter, color_counter):
     """This function draws the list from the listname given, color and space counter"""
@@ -68,6 +68,8 @@ def merge_sort(list_name):
             list_name[k] = right[j]
             j+=1
             k+=1
+    if reverse == True:
+        list_name = list_name[::-1]
     drawlist(list_name, space_counter, color_counter)
     return list_name
 
