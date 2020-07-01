@@ -6,22 +6,28 @@ def encrypt(plaintext):
     key = random.randint(0, 25) #inclusive range - if it was 26, the letter would be the same
     ciphertext = []
     for i in plaintext:
-        alphabet_index = alphabet.index(i)
-        new_key = alphabet_index + key
-        if new_key >= 26:
-            new_key = (alphabet_index + key) - 26
-        ciphertext.append(alphabet[new_key])
+        if i in alphabet:
+            alphabet_index = alphabet.index(i)
+            new_key = alphabet_index + key
+            if new_key >= 26:
+                new_key = (alphabet_index + key) - 26
+            ciphertext.append(alphabet[new_key])
+        else:
+            ciphertext.append(i)
     ciphertext = ("".join(ciphertext))
     return ciphertext, key
 
 def decrypt(ciphertext, key):
     plaintext = []
     for i in ciphertext:
-        alphabet_index = alphabet.index(i)
-        real_index = alphabet_index - key
-        if real_index < 0:
-            real_index = 26 - real_index
-        plaintext.append(alphabet[real_index])
+        if i in alphabet:
+            alphabet_index = alphabet.index(i)
+            real_index = alphabet_index - key
+            if real_index < 0:
+                real_index = 26 - real_index
+            plaintext.append(alphabet[real_index])
+        else:
+            plaintext.append(i)
     plaintext = ("".join(plaintext))
     return plaintext
 
