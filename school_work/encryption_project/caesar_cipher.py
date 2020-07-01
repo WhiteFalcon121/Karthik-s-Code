@@ -13,7 +13,7 @@ def encrypt(plaintext):
                 new_key = (alphabet_index + key) - 26
             ciphertext.append(alphabet[new_key])
         else:
-            ciphertext.append(i)
+            ciphertext.append(i) # for special characters
     ciphertext = ("".join(ciphertext))
     return ciphertext, key
 
