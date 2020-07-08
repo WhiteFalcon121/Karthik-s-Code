@@ -24,7 +24,7 @@ def decrypt(ciphertext, key):
             alphabet_index = alphabet.index(i)
             real_index = alphabet_index - key
             if real_index < 0:
-                real_index = 26 - real_index
+                real_index = 26 + real_index
             plaintext.append(alphabet[real_index])
         else:
             plaintext.append(i)
