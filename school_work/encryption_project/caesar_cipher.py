@@ -31,13 +31,14 @@ def decrypt(ciphertext, key):
     plaintext = ("".join(plaintext))
     return plaintext
 
-option = str(input("Decrypt or encrypt? (d or e)"))
-if option == "D" or option == "d":
-    ciphertext = input("Enter ciphertext: ").upper()
-    key = int(input("Enter key: "))
-    print(decrypt(ciphertext, key))
-elif option == "E" or option == "e":
-    message = str(input("Enter message to be encrypted: ").upper())
-    print(encrypt(message))
-else:
-    print("Not an option.")
+def main():
+    option = str(input("Decrypt or encrypt? (d or e)"))
+    if option == "D" or option == "d":
+        ciphertext = input("Enter ciphertext: ").upper()
+        key = int(input("Enter key: "))
+        print(decrypt(ciphertext, key))
+    elif option == "E" or option == "e":
+        message = str(input("Enter message to be encrypted: ").upper())
+        print(encrypt(message))
+    else:
+        print("Not an option.")
